@@ -13,8 +13,9 @@ namespace SeleniumCsharpDotNetBaisc.Base
         public IWebDriver Driver;
         [SetUp]
         public void open() {
-
-            Driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--headless");
+            driver = new ChromeDriver(chromeOptions);
         }
         [TearDown]
         public void Close() {
