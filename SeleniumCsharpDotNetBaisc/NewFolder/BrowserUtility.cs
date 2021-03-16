@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,9 @@ namespace SeleniumCsharpDotNetBaisc.NewFolder
     {
         
         public IWebDriver Init(IWebDriver driver) {
-            driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--headless");
+            driver = new ChromeDriver(chromeOptions);
             return driver;
         }
 
