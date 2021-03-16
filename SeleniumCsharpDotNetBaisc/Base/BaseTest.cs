@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,8 @@ namespace SeleniumCsharpDotNetBaisc.Base
         public IWebDriver Driver;
         [SetUp]
         public void open() {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("--headless");
-            driver = new ChromeDriver(chromeOptions);
+
+            Driver = new ChromeDriver();
         }
         [TearDown]
         public void Close() {
